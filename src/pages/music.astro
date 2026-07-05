@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import YouTubeEmbed from '../components/YouTubeEmbed.astro';
+---
+<BaseLayout>
+  <h1>Choral Music & Direction</h1>
+  <p>Selected performances, literature, and active research for vocal ensembles.</p>
+
+  <hr style="border-color: var(--card-bg); margin: 2rem 0;" />
+
+  <h2>Forthcoming Literature</h2>
+  <div style="padding: 1.5rem; background-color: var(--card-bg); border: 1px solid var(--accent-color); border-radius: 8px; margin-bottom: 2rem;">
+    <h3 style="margin-top: 0; color: var(--accent-color);">Archaeoacoustics and Choral Resonance</h3>
+    <p style="margin-bottom: 0;">An upcoming article exploring the intersection of resonant properties in ancient lithic structures and modern vocal ensemble acoustics.</p>
+  </div>
+
+  <hr style="border-color: var(--card-bg); margin: 2rem 0;" />
+
+  <h2>Concert Performances</h2>
+  <p>Selected conducting footage from recent seasons.</p>
+  
+  <!-- Example Video Embed -->
+  <!-- Replace "YOUR_VIDEO_ID" with the actual 11-character YouTube ID -->
+  <YouTubeEmbed 
+    videoId="YOUR_VIDEO_ID" 
+    title="Runestone Chorale Performance" 
+  />
+
+  <div style="padding: 2rem; text-align: center; background-color: #010a02dc; border: 1px dashed #475569; border-radius: 8px; color: #64748b; margin-top: 2rem;">
+    <em>Additional concert footage is currently being mastered and will be uploaded shortly.</em>
+  </div>
+
+</BaseLayout>

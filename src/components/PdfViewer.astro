@@ -1,0 +1,79 @@
+---
+// src/components/PdfViewer.astro
+interface Props {
+  src: string;
+  title: string;
+  thumbnail: string;
+  description: string;
+}
+
+const { src, title, thumbnail, description } = Astro.props;
+---
+<a href={src} target="_blank" rel="noopener noreferrer" class="pdf-card">
+  <div class="pdf-thumb">
+    <img src={thumbnail} alt={`First page of ${title}`} />
+  </div>
+  <div class="pdf-info">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <span class="view-btn">Read Manuscript &rarr;</span>
+  </div>
+</a>
+
+<style>
+  .pdf-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 2rem 0;
+  }
+  
+  .pdf-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  .pdf-thumb img {
+    width: 100px; /* Adjust this number up or down to your liking */
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--accent-color);
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.5);
+    display: block;
+  }
+  
+  .pdf-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+  }
+  
+  .pdf-info p {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .view-btn {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bg-color);
+    background-color: var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .pdf-card:hover .view-btn {
+    background-color: #a4802c; /* A slightly brighter shade for the hover state */
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PdfViewer from '../components/PdfViewer.astro';
+---
+<BaseLayout>
+  <h1>Scholarly Research</h1>
+  <p>A repository of my theoretical frameworks, bare-metal systems development, and archaeoacoustics research.</p>
+  
+  <hr style="border-color: var(--card-bg); margin: 2rem 0;" />
+  
+  <h2>Physics & Frameworks</h2>
+  <PdfViewer 
+    src="/preprints/fluid-resonance-torus-framework.pdf" 
+    title="Fluid-Resonance Torus Framework" 
+    thumbnail="/preprints/manuscript-thumb.png"
+    description="A theoretical physics manuscript modeling the universe as a continuous superfluid, submitted to Foundations of Physics."
+  />
+
+  <h2>Computer Science</h2>
+  <div style="margin: 2rem 0; padding: 1.5rem; background-color: var(--card-bg); border: 1px solid var(--accent-color); border-radius: 8px;">
+    <h3 style="margin-top: 0; color: var(--accent-color);">TorusOS CoreMark Benchmark</h3>
+    <img 
+      src="/preprints/coremark-results.png" 
+      alt="Verified EEMBC CoreMark benchmark score for TorusOS" 
+      style="max-width: 100%; height: auto; border-radius: 4px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); display: block;" 
+    />
+  </div>
+</BaseLayout>

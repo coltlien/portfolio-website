@@ -1,17 +1,97 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-image">
+      <img src="/profile.jpg" alt="Colt Camron Lien" />
+    </div>
+    <div class="hero-content">
+      <h1>Colt Camron Lien</h1>
+      <h3>Conductor | Educator | Polymath</h3>
+      <a href="/research" class="btn">Peruse Scholarly Work</a>
+    </div>
+  </section>
+  
+  <section class="manifesto">
+    <h2>Who am I? What am I? Even I don't know.</h2>
+    <p>
+      As I step into continually more adventures, I find it increasingly difficult to
+      place myself into a single category or field of study. So welcome to the mess. 
+      Here you'll find my extended biography, contact information, and a collection of 
+      my various work. Sometimes it's music, sometimes it's physics. I guess that's okay?
+    </p>
+  </section>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <hr style="border-color: var(--card-bg); margin: 3rem 0;" />
+
+  <section class="featured-work">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Current Focus</h2>
+    
+    <div class="card-grid">
+      <a href="/research" class="focus-card">
+        <h3>Theoretical Frameworks & Systems</h3>
+        <p>Active research modeling the universe as a continuous superfluid, alongside bare-metal Rust development for TorusOS.</p>
+        <span class="card-link">View Manuscripts &rarr;</span>
+      </a>
+
+      <a href="/music" class="focus-card">
+        <h3>Choral Direction & Literature</h3>
+        <p>Designing authentic, high-level musical experiences that explore diverse cultures and convey compelling human messages.</p>
+        <span class="card-link">View Music &rarr;</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .card-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 768px) {
+    .card-grid {
+      flex-direction: column;
+    }
+  }
+
+  .focus-card {
+    flex: 1;
+    background-color: var(--card-bg);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .focus-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .focus-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+  }
+
+  .focus-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .card-link {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-color);
+  }
+</style>

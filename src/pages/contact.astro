@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout>
+  <h1>Contact Info</h1>
+  <p>Some of my greatest joy comes from collaborating with others. For commissioning music, research collaboration, or general inquiries, please reach out using the form below.</p>
+  
+  <div class="contact-container">
+    <form action="https://formspree.io/f/xbdvwlpb" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required placeholder="Dr. Emmett Brown" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="emmett@hillvalley.edu" />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Let's discuss the resonant properties of..."></textarea>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Send Message &rarr;</button>
+    </form>
+  </div>
+</BaseLayout>
+
+<style>
+  .contact-container {
+    margin-top: 2.5rem;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-weight: bold;
+    color: var(--accent-color);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid #475569; /* Subtle border that works with both themes */
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  
+  /* Placeholder text styling */
+  input::placeholder, textarea::placeholder {
+    color: #64748b;
+    opacity: 0.7;
+  }
+
+  /* Focus states so the user knows which box they are typing in */
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(148, 163, 184, 0.15);
+  }
+
+  .submit-btn {
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    align-self: flex-start; /* Keeps the button from stretching the full width */
+  }
+</style>
